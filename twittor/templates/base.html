@@ -1,0 +1,24 @@
+<!-- base template so we can use across different html/webpages -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if title %}
+    <title>Welcome to {{ title }}</title>
+    <!-- case if title is not provided -->
+    {% else %}
+    <title>Welcome to python</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>
+      <!-- Twittor: <a href="/">Home</a> -->
+      Twittor: <a href="{{ url_for('index') }}">Home</a> 
+      <a href="{{ url_for('login') }}">Login</a>
+    </div>
+    <hr />
+    {% block content %} {% endblock %}
+  </body>
+</html>

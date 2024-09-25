@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+<h1>Login</h1>
+<form action="" method="post">
+  <!-- before -->
+  <!-- <p>
+    <label for="">Username</label>
+    <input type="text" name="" id="">
+  </p> -->
+
+  <!-- NEW: use jinja templates -> 1st to replace label, 2nd to replace input-->
+  <p>{{ form.username.label }} {{ form.username() }}</p>
+  <p>{{ form.password.label }} {{ form.password() }}</p>
+  <p>{{ form.remember_me() }} {{ form.remember_me.label }} </p>
+  <p>{{ form.submit() }} </p>
+</form>
+
+{% endblock %}
