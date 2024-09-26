@@ -14,9 +14,10 @@
   </head>
   <body>
     <div>
-      <!-- Twittor: <a href="/">Home</a> -->
       Twittor: <a href="{{ url_for('index') }}">Home</a> 
       <a href="{{ url_for('login') }}">Login</a>
+      <!-- Twittor: <a href="/">Home</a> -->
+      <!-- <a href="/login">Home</a> -->
     </div>
     <hr />
     {% block content %} {% endblock %}

@@ -1,5 +1,6 @@
 from flask import render_template, redirect, url_for
 from twittor.forms import LoginForm
+from twittor.models import User, Tweet
 
 
 def index():  # hassle to return whole html -> need ninja template
@@ -30,9 +31,9 @@ def login():
         )
         print(msg)  # means user data passed to backend
         # return redirect('/')
-        return redirect(url_for('index')) # helps when endpoint name for index page changes e.g. /index not /
+        # helps when endpoint name for index page changes e.g. /index not /
+        return redirect(url_for('index'))
         # 'index' = the 2nd param in init's add_url_rule
-    
 
     # form not submitted
     return render_template('login.html', title="Sign In", form=form)
